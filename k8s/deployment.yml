@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-infra-products-app
+  labels:
+    app: devops-infra-products-app
+spec:
+
+  selector:
+    matchLabels:
+      app: devops-infra-products-app
+  replicas: 6
+  strategy:
+    type: RollingUpdate
+
+
+  template:
+    metadata:
+      labels:
+        app: devops-infra-products-app
+    spec:
+      containers:
+      - name: devops-infra-products-app
+        image: kpradeep/devops-infra-products-app
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 9999

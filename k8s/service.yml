@@ -1,0 +1,15 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-products-infra-service
+spec:
+  type: ClusterIP	
+  selector:
+    app: app-products-infra-service
+  
+  ports:
+  - protocol: TCP
+    port: 9999
+    targetPort: 9999
+
