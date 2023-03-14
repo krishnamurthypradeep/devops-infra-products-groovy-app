@@ -23,9 +23,6 @@ spec:
       - name: devops-infra-products-app
         image: kpradeep/devops-infra-products-app
         imagePullPolicy: IfNotPresent
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+        
         ports:
         - containerPort: 9999
