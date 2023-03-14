@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: devops-infra-products-app
-  replicas: 6
+  replicas: 1
   strategy:
     type: RollingUpdate
 
